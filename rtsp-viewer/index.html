@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <style>
+    canvas {
+      display: block;
+      float: left;
+      transform: scale(1);
+      transform-origin: 0% 0% 0px;
+    }
+    .camera {
+      display: block;
+      margin-left: 10px;
+      padding: 0px;
+      width: 400px;
+    }
+  </style>
+  <title>Live cam</title>
+  <script src="https://jsmpeg.com/jsmpeg.min.js"></script>
+</head>
+<body>
+  <!-- <div>
+    <canvas id="video-canvas"> </canvas>
+  </div> -->
+  <div>
+    <canvas class="camera" id="video-canvas" width="640" height="360"></canvas>
+  </div>
+
+  <script type="text/javascript">
+    var url = "ws://localhost:3333";
+    var canvas = document.getElementById("video-canvas");
+    var player = new JSMpeg.Player(url, { canvas: canvas });
+  </script>
+</body>
